@@ -47,6 +47,7 @@ public class AccountPage {
 		for(WebElement e : headersList) {
 			String text = e.getText();
 			headersValList.add(text);
+		
 		}
 		return headersValList;
 	}
