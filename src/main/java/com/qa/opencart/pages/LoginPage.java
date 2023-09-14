@@ -60,6 +60,7 @@ public class LoginPage {
 		return new AccountPage(driver);
 	}
 
+	
 	public boolean doLoginWithWrongCredentials(String userName, String pwd) {
 		System.out.println("wrong creds are : " + userName + ":" + pwd);
 		eleUtil.waitForElementVisible(emailId, AppConstants.MEDIUM_DEFAULT_WAIT);
@@ -74,6 +75,7 @@ public class LoginPage {
 		return false;
 	}
 
+	
 	public RegisterPage navigateToRegisterPage() {
 		eleUtil.doClick(registerLink);
 		return new RegisterPage(driver);
