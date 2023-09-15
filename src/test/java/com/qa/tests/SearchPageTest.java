@@ -6,6 +6,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
+import com.qa.opencart.dataproviders.ProductDataProvider;
 
 public class SearchPageTest extends BaseTest {
 
@@ -14,19 +15,13 @@ public class SearchPageTest extends BaseTest {
 		accPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
-	@DataProvider
-	public Object[][] getProductSearchKeyData() {
-		return new Object[][] { { "Macbook" }, { "iMac" }, { "Samsung" } };
-	}
-
-	@Test(dataProvider = "getProductSearchKeyData")
+	@Test(dataProvider = "prodcutDataWithSearchKey", dataProviderClass = ProductDataProvider.class)
 	public void searchProductResultCountTest(String searchKey) {
 		resultsPage = accPage.doSearch(searchKey);
 		Assert.assertTrue(resultsPage.getProductResultsCount() > 0);
 	}
 
-	@Test(dataProvider = "getProductSearchKeyData") // (dataProvider = "productDataWithSearchKey", dataProviderClass =
-			// ProductDataProvider.class)
+	@Test(dataProvider = "prodcutDataWithSearchKey", dataProviderClass = ProductDataProvider.class)
 	public void searchPageTitleTest(String searchKey) {
 		resultsPage = accPage.doSearch(searchKey);
 		String actSearchTitle = resultsPage.getResultsPageTitle(searchKey);
@@ -34,15 +29,8 @@ public class SearchPageTest extends BaseTest {
 		Assert.assertEquals(actSearchTitle, "Search - " + searchKey);
 	}
 
-	@DataProvider
-	public Object[][] getProductTestData() {
-		return new Object[][] { { "Macbook","MacBook Pro" }, { "iMac","iMac" }, 
-			{ "Samsung","Samsung SyncMaster 941BW" },{ "Samsung","Samsung Galaxy Tab 10.1" } };
-	}
-	
-	@Test(dataProvider = "getProductTestData") // (dataProvider = "productDataWithName", dataProviderClass =
-			// ProductDataProvider.class)
-	public void selectProductTest(String searchKey,String productName) {
+	@Test(dataProvider = "productDataWithProductName", dataProviderClass = ProductDataProvider.class)
+	public void selectProductTest(String searchKey, String productName) {
 		resultsPage = accPage.doSearch(searchKey);
 		productInfoPage = resultsPage.selectProduct(productName);
 		String actProductHeaderName = productInfoPage.getProductHeaderName();
@@ -50,18 +38,12 @@ public class SearchPageTest extends BaseTest {
 		Assert.assertEquals(actProductHeaderName, productName);
 	}
 
-	@DataProvider
-	public Object[][] getProductImgTestData() {
-		return new Object[][] { { "Macbook","MacBook Pro",4 }, { "iMac","iMac",3 }, 
-			{ "Samsung","Samsung SyncMaster 941BW",1 },{ "Samsung","Samsung Galaxy Tab 10.1",7 } };
-	}
-	@Test(dataProvider = "getProductImgTestData") // (dataProvider = "productDataWithImage", dataProviderClass =
-			// ProductDataProvider.class)
-	public void productImagesTest(String searchKey,String productName,int expImgCount) {
+	@Test(dataProvider = "productDataWithImgCount", dataProviderClass = ProductDataProvider.class)
+	public void productImagesTest(String searchKey, String productName, int expImgCount) {
 		resultsPage = accPage.doSearch(searchKey);
 		productInfoPage = resultsPage.selectProduct(productName);
 		int actProductImagesCount = productInfoPage.getProductImagesCount();
 		System.out.println("actual product images count : " + actProductImagesCount);
-		Assert.assertEquals(actProductImagesCount,expImgCount);
+		Assert.assertEquals(actProductImagesCount, expImgCount);
 	}
 }

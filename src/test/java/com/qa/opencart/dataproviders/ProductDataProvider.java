@@ -6,44 +6,42 @@ import com.qa.opencart.pojo.Product;
 
 public class ProductDataProvider {
 	@DataProvider(name = "productData")
-	public Object[][] getProductTestData() {
-		return new Object[][] {
-			{new Product("bottle","Stella Textured Fliptop Bottle - Pink","4")},
-			{new Product("bedsheet","Trance Lines Abstract Bedsheet","4")},
-			{new Product("red","Quilted Trails Comforter - Red","3")}	
-		};
-		
-		
+	public Object[][] getProdutTestData() {
+		return new Object[][] { 
+			{ new Product("Macbook", "MacBook Pro", 4) }, 
+			{ new Product("iMac", "iMac", 3) },
+			{ new Product("Samsung", "Samsung SyncMaster 941BW", 1) },
+			{ new Product("Samsung", "Samsung Galaxy Tab 10.1", 7) } 
+			};
 	}
-	
-	@DataProvider(name = "productDataWithSearchKey")
+
+	@DataProvider(name = "prodcutDataWithSearchKey")
 	public Object[][] getProductSearchKeyData() {
-		return new Object[][] {
-			{"bottle"},
-			{"bedsheet"},
-			{"red"}
-			
-		};
+		return new Object[][] { 
+			{ "Macbook" }, 
+			{ "iMac" }, 
+			{ "Samsung" } 
+			};
 	}
-	
+
 	@DataProvider(name = "productDataWithProductName")
-	public Object[][]getProductData() {
-		return new Object[][] {
-			{"bottle","Stella Textured Fliptop Bottle - Pink"},
-			{"bedsheet","Trance Lines Abstract Bedsheet"},
-			{"red","Quilted Trails Comforter - Red"}
-			
-		};
+	public Object[][] getProductData() {
+		return new Object[][] { 
+			{ "Macbook", "MacBook Pro" }, 
+			{ "iMac", "iMac" },
+			{ "Samsung", "Samsung SyncMaster 941BW" }, 
+			{ "Samsung", "Samsung Galaxy Tab 10.1" } 
+			};
 	}
-	
+
 	@DataProvider(name = "productDataWithImgCount")
-	public Object[][]getProductImageTestData() {
-		return new Object[][] {
-			{"bottle","Stella Textured Fliptop Bottle - Pink","4"},
-			{"bedsheet","Trance Lines Abstract Bedsheet","4"},
-			{"red","Quilted Trails Comforter - Red","3"}	
-		};
+	public Object[][] getProductImageTestData() {
+		return new Object[][] { 
+			{ "Macbook", "MacBook Pro", 4 }, 
+			{ "iMac", "iMac", 3 },
+			{ "Samsung", "Samsung SyncMaster 941BW", 1 }, 
+			{ "Samsung", "Samsung Galaxy Tab 10.1", 7 } 
+			};
+
 	}
-
-
 }
