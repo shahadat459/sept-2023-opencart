@@ -3,24 +3,40 @@
 
 <suite name="opencart master Suite" verbose="4">
 
-	<test name="Login Page Test">
-		<classes>
-			<class name= "com.qa.tests.LoginPageTest"/>
-		</classes>
-	</test>
 	<test name="Account Page Test">
 		<classes>
-			<class name= "com.qa.tests.AccountPageTest"/>
+			<class name="com.qa.tests.AccountPageTest" />
 		</classes>
 	</test>
-	<test name="Product Page Test">
+
+	<test name="Login Page Negative Test">
 		<classes>
-			<class name= "com.qa.tests.ProductPageInfoTest"/>
+			<class name="com.qa.tests.LoginPageNegativeTest" />
 		</classes>
 	</test>
-	<test name="Search Page Test">
+
+	<test name="Login Page Test">
 		<classes>
-			<class name= "com.qa.tests.SearchPageTest"/>
+			<class name="com.qa.tests.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="Product Page Info Test">
+		<classes>
+			<class name="com.qa.tests.ProductPageInfoTest" />
+		</classes>
+	</test>
+
+
+	<test name="Search Page Data Test">
+		<classes>
+			<class name="com.qa.tests.SearchPageDataTest" />
+		</classes>
+	</test>
+	
+	<test name="Search Page  Test">
+		<classes>
+			<class name="com.qa.tests.SearchPageTest" />
 		</classes>
 	</test>
 
