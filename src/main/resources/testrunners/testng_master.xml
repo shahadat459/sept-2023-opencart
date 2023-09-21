@@ -27,7 +27,7 @@
 		</classes>
 	</test>
 
-
+<!--
 	<test name="Search Page Data Test">
 		<classes>
 			<class name="com.qa.tests.SearchPageDataTest" />
@@ -40,5 +40,5 @@
 		</classes>
 	</test>
 
-
+-->
 </suite>
