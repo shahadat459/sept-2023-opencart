@@ -18,12 +18,13 @@ import com.qa.opencart.pages.ResultsPage;
 
 public class BaseTest {
 
-	WebDriver driver;
+	protected  WebDriver driver;
 	protected LoginPage loginPage;
 	protected AccountPage accPage;
 	protected ResultsPage resultsPage;
 	protected ProductInfoPage productInfoPage;
 	protected RegisterPage registerPage;
+	
 
 	protected DriverFactory df;
 	protected Properties prop;
@@ -36,6 +37,7 @@ public class BaseTest {
 		prop = df.initProp();
 		driver = df.initDriver(prop);
 		loginPage = new LoginPage(driver);
+		// productInfoPage = new  ProductInfoPage(driver);
 		softAssert = new SoftAssert();
 	}
 

@@ -38,6 +38,8 @@ public class ElementUtil {
 			System.out.println("null vlaues are not allowed....");
 			throw new FrameWorkException("VALUECANNOTBENULL");
 		}
+		
+		
 
 		WebElement ele = getElement(locator);
 		ele.clear();
