@@ -15,20 +15,20 @@ public class SearchPageDataTest extends BaseTest {
 	}
 
 	@Test(dataProvider = "productData", dataProviderClass = ProductDataProvider.class)
-	public void searchProductResultCountTest(Product  product) {
+	public void searchProductResultCountTest(Product product) {
 		resultsPage = accPage.doSearch(product.getSearchKey());
 		Assert.assertTrue(resultsPage.getProductResultsCount() > 0);
 	}
 
-	@Test(dataProvider = "productData" , dataProviderClass = ProductDataProvider.class) 
-	public void searchPageTitleTest(Product  product) {
+	@Test(dataProvider = "productData", dataProviderClass = ProductDataProvider.class)
+	public void searchPageTitleTest(Product product) {
 		resultsPage = accPage.doSearch(product.getSearchKey());
 		String actSearchTitle = resultsPage.getResultsPageTitle(product.getSearchKey());
 		System.out.println("Search Page Title : " + actSearchTitle);
 		Assert.assertEquals(actSearchTitle, "Search - " + product.getSearchKey());
 	}
 
-	@Test(dataProvider = "productData" , dataProviderClass = ProductDataProvider.class) 
+	@Test(dataProvider = "productData", dataProviderClass = ProductDataProvider.class)
 	public void selectProductTest(Product product) {
 		resultsPage = accPage.doSearch(product.getSearchKey());
 		productInfoPage = resultsPage.selectProduct(product.getProductName());
@@ -37,7 +37,7 @@ public class SearchPageDataTest extends BaseTest {
 		Assert.assertEquals(actProductHeaderName, product.getProductName());
 	}
 
-	@Test(dataProvider = "productData" , dataProviderClass = ProductDataProvider.class) 
+	@Test(dataProvider = "productData", dataProviderClass = ProductDataProvider.class)
 	public void productImagesTest(Product product) {
 		resultsPage = accPage.doSearch(product.getSearchKey());
 		productInfoPage = resultsPage.selectProduct(product.getProductName());

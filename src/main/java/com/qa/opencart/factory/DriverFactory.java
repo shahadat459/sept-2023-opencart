@@ -23,8 +23,8 @@ public class DriverFactory {
 
 	public WebDriver initDriver(Properties prop) {
 		String browserName = prop.getProperty("browser").trim();
-		// browser will be supplied from cmd 
-		//browserName = System.getProperty("browser");
+		// browser will be supplied from cmd
+		// browserName = System.getProperty("browser");
 		System.out.println("Browser name : " + browserName);
 
 		highlightElement = prop.getProperty("highlight");
@@ -67,12 +67,13 @@ public class DriverFactory {
 		FileInputStream ip = null;
 
 		String envName = System.getProperty("env");
-		System.out.println("Running test cases on env :" + envName);
+		System.out.println("Environment name is:" + envName);
 		try {
 			if (envName == null) {
 				System.out.println("No env is given .....hence running it on QA env...");
 				ip = new FileInputStream("./src/main/resources/config/config.properties");
 			} else {
+				System.out.println("Running test cases on environment: " + envName);
 				switch (envName.toLowerCase().trim()) {
 				case "qa":
 					ip = new FileInputStream("./src/main/resources/config/qa.config.properties");
@@ -110,15 +111,12 @@ public class DriverFactory {
 	/*
 	 * take screenshot
 	 * 
-	 * 
 	 * public static String getScreenshot() { File srcFile = ((TakesScreenshot)
 	 * getDriver()).getScreenshotAs(OutputType.FILE); String path =
 	 * System.getProperty("user.dir") + "/screenshot/" + System.currentTimeMillis()
 	 * + ".png"; File destination = new File(path);
 	 * 
 	 * try { FileUtils.copyFile(srcFile, destination); } catch (IOException e) {
-	 * e.printStackTrace(); }
-	 * 
-	 * return path; }
+	 * e.printStackTrace(); } return path; }
 	 */
 }
