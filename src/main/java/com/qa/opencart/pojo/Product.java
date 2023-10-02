@@ -36,7 +36,7 @@ public class Product {
 		this.productImages = productImages;
 	}
 
-	//to print the object properties on console
+	// to print the object properties on console
 	@Override
 	public String toString() {
 		return "Product [searchKey=" + searchKey + ", productName=" + productName + ", productImages=" + productImages

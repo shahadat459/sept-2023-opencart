@@ -9,7 +9,6 @@ import com.qa.opencart.utils.AppConstants;
 
 public class AccountPageTest extends BaseTest{
 	
-
 	@BeforeClass
 	public void accPageSetup() {
 		accPage = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));

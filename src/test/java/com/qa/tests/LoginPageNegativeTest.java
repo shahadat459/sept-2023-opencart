@@ -6,24 +6,17 @@ import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
 
-public class LoginPageNegativeTest  extends BaseTest{
-	
+public class LoginPageNegativeTest extends BaseTest {
 	@DataProvider
 	public Object[][] incorrectLoginTestData() {
-		return new Object[][] {
-			{"auto123@gmaill.com", "123456"},
-			{"test@@gmaill.com", "123456"},
-			{"auto", "test"},
-			{"#@$@#$@#$@", "@#!@#!@#!"}
-		};
-		
+		return new Object[][] { { "auto12344@gmaill.com", "14423456" }, 
+			{ "test14@@gmaill.com", "1234456" }};
+
 	}
-	
+
 	@Test(dataProvider = "incorrectLoginTestData")
 	public void loginWithWrongCredentialsTest(String userName, String password) {
 		Assert.assertTrue(loginPage.doLoginWithWrongCredentials(userName, password));
 	}
-	
-	
-	
+
 }

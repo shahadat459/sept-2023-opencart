@@ -8,7 +8,7 @@ import com.qa.opencart.utils.AppConstants;
 
 public class LoginPageTest extends BaseTest {
 
-	@Test
+	@Test(invocationCount = 3)
 	public void loginPageTitleTest() {
 		String actTitle = loginPage.getLoginPageTitle();
 		Assert.assertEquals(actTitle, AppConstants.LOGIN_PAGE_TITLE_VALUE);
@@ -25,9 +25,9 @@ public class LoginPageTest extends BaseTest {
 		Assert.assertTrue(loginPage.isForgotPwdLinkExist());
 	}
 
-	@Test
+	@Test()//@Test(invocationCount = 2)
 	public void loginTest() {
-		accPage = loginPage.doLogin(prop.getProperty("username"),prop.getProperty("password"));
+		accPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertTrue(accPage.isLogoutLinkExist()); //
 		Assert.assertTrue(accPage.getAccPageTitle().equals("My Account"));
 	}
