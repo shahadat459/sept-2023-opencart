@@ -19,8 +19,10 @@ public class ProductInfoPage {
 	private By productImages = By.cssSelector("ul.thumbnails img");
 	private By productMetaData = By.xpath("(//div[@id='content']//ul[@class='list-unstyled'])[position()=1]/li");
 	private By productPriceData = By.xpath("(//div[@id='content']//ul[@class='list-unstyled'])[position()=2]/li");
-	private By quantity = By.id("input-quantity");
+	private By prodQuantity= By.xpath("//input[@id='input-quantity']");
 	private By addToCartBtn = By.id("button-cart");
+	private By prodAddedSucssMsg = By.xpath("//div[@class='alert alert-success alert-dismissible']");
+	//private By expScssMessg = By.xpath(("//a[text()='MacBook Pro'])[3]"));
 
 	private Map<String, String> productInfoMap;
 
@@ -75,5 +77,20 @@ public class ProductInfoPage {
 		productInfoMap.put("extaxprice", exTaxPriceValue);
 
 	}
-
+	
+	public void enterProductQuantity(String pc) {	
+	  eleUtil.doSendKeys(prodQuantity, pc);
+		
+	}
+	
+	public void clickOnAddToCardBttn() {
+		eleUtil.doClick(addToCartBtn);
+	}
+	
+	public String getScussMsgText() {
+		 return eleUtil.doGetElementText(prodAddedSucssMsg);
+		
+		
+	}
+	
 }
