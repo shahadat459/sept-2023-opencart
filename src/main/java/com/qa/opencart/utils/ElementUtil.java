@@ -39,8 +39,6 @@ public class ElementUtil {
 			throw new FrameWorkException("VALUECANNOTBENULL");
 		}
 		
-		
-
 		WebElement ele = getElement(locator);
 		ele.clear();
 		ele.sendKeys(value);

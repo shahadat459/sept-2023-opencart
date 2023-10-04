@@ -53,10 +53,10 @@ public class ProductPageInfoTest extends BaseTest {
 		productInfoPage.enterProductQuantity("5");
 		productInfoPage.clickOnAddToCardBttn();
 		String successMsg = productInfoPage.getScussMsgText();
-		System.out.println("MSG:" + successMsg);
-
+		//System.out.println("MSG:" + successMsg);
+		
 		Assert.assertTrue(successMsg.contains("MacBook Pro"));
-		// Assert.assertEquals(productInfoPage.getScussMsgText(),"sucssMsgText");
+	// Assert.assertEquals(productInfoPage.getScussMsgText(),"sucssMsgText");
 
 	}
 
