@@ -3,9 +3,9 @@ package com.qa.opencart.pojo;
 public class Product {
 	private String searchKey;
 	private String productName;
-	private String productImages;
+	private int productImages;
 
-	public Product(String searchKey, String productName, String count) {
+	public Product(String searchKey, String productName, int count) {
 
 		this.searchKey = searchKey;
 		this.productName = productName;
@@ -28,14 +28,15 @@ public class Product {
 		this.productName = productName;
 	}
 
-	public String getProductImages() {
+	public int getProductImages() {
 		return productImages;
 	}
 
-	public void setProductImages(String productImages) {
+	public void setProductImages(int productImages) {
 		this.productImages = productImages;
 	}
 
+	// to print the object properties on console
 	@Override
 	public String toString() {
 		return "Product [searchKey=" + searchKey + ", productName=" + productName + ", productImages=" + productImages

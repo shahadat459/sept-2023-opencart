@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="opencart master Suite" verbose="3" parallel="tests"
+	thread-count="4">
+	<test name="Account Page Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.qa.tests.AccountPageTest" />
+		</classes>
+	</test>
+
+	<test name="Login Page Negative Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class
+				name="com.qa.tests.LoginPageNegativeTest" />
+		</classes>
+	</test>
+
+	<test name="Login Page Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class
+				name="com.qa.tests.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="Product Page Info Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class
+				name="com.qa.tests.ProductPageInfoTest" />
+		</classes>
+	</test>
+
+	<test name="Search Page Data Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class
+				name="com.qa.tests.SearchPageDataTest" />
+		</classes>
+	</test>
+
+	<test name="Search Page Test">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class
+				name="com.qa.tests.SearchPageTest" />
+		</classes>
+	</test>
+
+
+</suite>
