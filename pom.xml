@@ -8,7 +8,6 @@
 	<groupId>sept.2023.opencart</groupId>
 	<artifactId>sept-2023-opencart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<name>sept-2023-opencart</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
@@ -81,7 +80,7 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 				</configuration>
-				
+
 				<dependencies>
 					<dependency>
 						<groupId>org.aspectj</groupId>
@@ -91,7 +90,6 @@
 				</dependencies>
 			</plugin>
 		</plugins>
-
 
 	</build>
 </project>
