@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import com.qa.opencart.utils.ElementUtil;
 
@@ -28,6 +29,9 @@ public class Test {
 		String C = it.next();
 		
 		System.out.println("Parent:" + P + " "+ "Child:" + C);
+		
+		Actions action = new Actions(driver);
+			
 	}
 
 }
