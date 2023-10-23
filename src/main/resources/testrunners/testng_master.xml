@@ -111,7 +111,6 @@
 		</classes>
 	</test>
 
-
 	<test name="Search Page Test_chrome">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
@@ -133,6 +132,5 @@
 				name="com.qa.tests.SearchPageTest" />
 		</classes>
 	</test>
-
 
 </suite>

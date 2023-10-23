@@ -42,6 +42,5 @@ public class ProductDataProvider {
 			{ "Samsung", "Samsung SyncMaster 941BW", 1 }, 
 			{ "Samsung", "Samsung Galaxy Tab 10.1", 7 } 
 			};
-
 	}
 }

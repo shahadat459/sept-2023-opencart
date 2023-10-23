@@ -6,7 +6,6 @@ public class Product {
 	private int productImages;
 
 	public Product(String searchKey, String productName, int count) {
-
 		this.searchKey = searchKey;
 		this.productName = productName;
 		this.productImages = count;
@@ -39,8 +38,8 @@ public class Product {
 	// to print the object properties on console
 	@Override
 	public String toString() {
-		return "Product [searchKey=" + searchKey + ", productName=" + productName + ", productImages=" + productImages
+		return "Product [searchKey=" + searchKey + ", productName=" + productName + ","
+				+ " productImages=" + productImages
 				+ "]";
 	}
-
 }
